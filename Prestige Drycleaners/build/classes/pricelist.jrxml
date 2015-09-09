@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="0">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="5"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#FFFFFF" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     pricing.`plan` AS pricing_plan,
+     pricing.`jeans` AS pricing_jeans,
+     pricing.`collar_shirt` AS pricing_collar_shirt,
+     pricing.`t_shirt` AS pricing_t_shirt,
+     pricing.`pullover` AS pricing_pullover,
+     pricing.`jacket` AS pricing_jacket,
+     pricing.`coat` AS pricing_coat,
+     pricing.`trouser` AS pricing_trouser,
+     pricing.`others` AS pricing_others,
+     pricing.`price_id` AS pricing_price_id
+FROM
+     `pricing` pricing]]>
+	</queryString>
+	<field name="pricing_plan" class="java.lang.String"/>
+	<field name="pricing_jeans" class="java.lang.Integer"/>
+	<field name="pricing_collar_shirt" class="java.lang.Integer"/>
+	<field name="pricing_t_shirt" class="java.lang.Integer"/>
+	<field name="pricing_pullover" class="java.lang.Integer"/>
+	<field name="pricing_jacket" class="java.lang.Integer"/>
+	<field name="pricing_coat" class="java.lang.Integer"/>
+	<field name="pricing_trouser" class="java.lang.Integer"/>
+	<field name="pricing_others" class="java.lang.String"/>
+	<sortField name="pricing_jeans"/>
+	<sortField name="pricing_collar_shirt"/>
+	<background>
+		<band height="575" splitType="Stretch">
+			<image vAlign="Bottom">
+				<reportElement mode="Opaque" x="0" y="234" width="85" height="241" backcolor="#000000"/>
+				<imageExpression><![CDATA["silhouette2.jpg"]]></imageExpression>
+			</image>
+			<rectangle>
+				<reportElement x="-20" y="234" width="20" height="241" backcolor="#000000"/>
+				<graphicElement>
+					<pen lineWidth="0.0"/>
+				</graphicElement>
+			</rectangle>
+			<frame>
+				<reportElement mode="Opaque" x="-20" y="475" width="105" height="100" backcolor="#666666"/>
+				<textField>
+					<reportElement style="Column header" x="0" y="0" width="104" height="73" forecolor="#000000"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="58" isBold="true" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField evaluationTime="Report">
+					<reportElement style="Column header" x="0" y="77" width="104" height="20" forecolor="#000000"/>
+					<box leftPadding="4" rightPadding="4"/>
+					<textElement textAlignment="Center">
+						<font size="16" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement mode="Transparent" x="42" y="73" width="20" height="1" backcolor="#FFFFFF"/>
+				</line>
+			</frame>
+		</band>
+	</background>
+	<title>
+		<band height="104" splitType="Stretch">
+			<staticText>
+				<reportElement style="Title" x="0" y="0" width="802" height="67"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="54" isBold="false" pdfFontName="Helvetica"/>
+				</textElement>
+				<text><![CDATA[PRESTIGE DRYCLEANERS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="232" y="67" width="568" height="37"/>
+				<textElement textAlignment="Right">
+					<font size="26"/>
+				</textElement>
+				<text><![CDATA[Dry-cleaning Price-listing]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="25" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="97" y="5" width="705" height="20" backcolor="#666666"/>
+				<staticText>
+					<reportElement style="Column header" x="0" y="0" width="78" height="15"/>
+					<textElement/>
+					<text><![CDATA[pricing_plan]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Column header" x="78" y="0" width="78" height="15"/>
+					<textElement/>
+					<text><![CDATA[pricing_jeans]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Column header" x="156" y="0" width="78" height="15"/>
+					<textElement/>
+					<text><![CDATA[pricing_collar_shirt]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Column header" x="234" y="0" width="78" height="15"/>
+					<textElement/>
+					<text><![CDATA[pricing_t_shirt]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Column header" x="312" y="0" width="78" height="15"/>
+					<textElement/>
+					<text><![CDATA[pricing_pullover]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Column header" x="390" y="0" width="78" height="15"/>
+					<textElement/>
+					<text><![CDATA[pricing_jacket]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Column header" x="468" y="0" width="78" height="15"/>
+					<textElement/>
+					<text><![CDATA[pricing_coat]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Column header" x="546" y="0" width="78" height="15"/>
+					<textElement/>
+					<text><![CDATA[pricing_trouser]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Column header" x="624" y="0" width="78" height="15"/>
+					<textElement/>
+					<text><![CDATA[pricing_others]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<frame>
+				<reportElement x="97" y="1" width="705" height="15"/>
+				<textField>
+					<reportElement style="Detail" x="0" y="0" width="78" height="15"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{pricing_plan}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Detail" x="78" y="0" width="78" height="15"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{pricing_jeans}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Detail" x="156" y="0" width="78" height="15"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{pricing_collar_shirt}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Detail" x="234" y="0" width="78" height="15"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{pricing_t_shirt}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Detail" x="312" y="0" width="78" height="15"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{pricing_pullover}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Detail" x="390" y="0" width="78" height="15"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{pricing_jacket}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Detail" x="468" y="0" width="78" height="15"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{pricing_coat}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Detail" x="546" y="0" width="78" height="15"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{pricing_trouser}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Detail" x="624" y="0" width="78" height="15"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{pricing_others}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="97" y="16" width="705" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="39" splitType="Stretch">
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement style="Column header" x="671" y="0" width="131" height="20" forecolor="#000000"/>
+				<textElement textAlignment="Right">
+					<font size="12" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="96" y="0" width="267" height="20"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Silhouette Title Report]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
